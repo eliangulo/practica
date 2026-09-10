@@ -18,7 +18,9 @@ using static practica.Producto;
 // Peliculas.CrearCSVPeliculas();
 //await Peliculas.Paralelo();
 //await Peliculas.Secuencial();
+//ProdExamen.Crear();
+//EjercicioLibro.GuardarLibros();
+EjercicioLibro.FiltrarLibros();
 
-ProdExamen.Crear();
 
 
