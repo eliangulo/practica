@@ -1,5 +1,6 @@
 ﻿
 using practica;
+using static practica.Producto;
 
 //ArchivoCSV.ListaProductos();
 //ArchivoCSV.CargarProductosPorConsola();
@@ -12,5 +13,12 @@ using practica;
 //await Concurrencia.Calcular();
 //await Concurrencia.EjecutarSecuencial();
 //await Concurrencia.EjecucionParalela();
-await Concurrencia.ProbarNumeroSecuenciales();
+//await Concurrencia.ProbarNumeroSecuenciales();
+//Animales.CrearCsvAnimales();
+// Peliculas.CrearCSVPeliculas();
+//await Peliculas.Paralelo();
+//await Peliculas.Secuencial();
+
+ProdExamen.Crear();
+
 
