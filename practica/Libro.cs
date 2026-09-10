@@ -72,8 +72,29 @@ namespace practica
             File.WriteAllText(ruta, JsonString);
 
         }
-    };
+        //Lee el json existente y agrega nuevos libros a ese archivo.
+        public static void LeerArchivo()
+        {
+            var rutaLectura = @"C:\itsc\practica\Libros.json";
 
-  
+            var texto = File.ReadAllText(rutaLectura);
+            var nuevoArchivo = JsonSerializer.Deserialize<List<Libro>>(texto);
+
+            var nuevosLibros = new List<Libro>
+            {
+                new Libro() { Titulo = "libro 1", Autor = "autor1", Paginas =100 },
+                new Libro() { Titulo = "libro 2", Autor = "autor2", Paginas =120 },
+            };
+
+            foreach (var libro in nuevosLibros)
+            {
+                nuevoArchivo.Add(libro);
+            }
+
+            var JsonString = JsonSerializer.Serialize(nuevoArchivo);
+            File.WriteAllText(rutaLectura, JsonString);
+
+        }
+    } 
 
 }

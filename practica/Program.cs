@@ -21,7 +21,13 @@ using static practica.Producto;
 //ProdExamen.Crear();
 //EjercicioLibro.GuardarLibros();
 //EjercicioLibro.FiltrarLibros();
-EjercicioLibro.AgregarLibros();
+//EjercicioLibro.AgregarLibros();
+//EjercicioLibro.LeerArchivo();
+//Curso.LeerLineas();
+
+await TareasConcurrencias.ProcesoParalelo();
+await TareasConcurrencias.ProcesoSecuencial();
+
 
 
 
