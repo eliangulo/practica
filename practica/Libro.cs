@@ -27,7 +27,7 @@ namespace practica
 
        
     }
-    public class EjercicioLibro() 
+    public class EjercicioLibro()
     {
         static string ruta = @"C:\itsc\practica\Libros.json";
 
@@ -51,6 +51,29 @@ namespace practica
                 Console.WriteLine($"{libro.Titulo} - {libro.Autor} - {libro.Paginas} páginas");
             }
         }
-    }
+        public static void AgregarLibros()
+        {
+            var ruta = @"C:\itsc\practica\Libros.json";
+            var contenido = File.ReadAllText(ruta);
+            var librosExistentes = JsonSerializer.Deserialize<List<Libro>>(contenido);
+
+            var listaNueva = new List<Libro>
+           {
+              new Libro() {Titulo = "Puentes de Madison", Autor = "Madison", Paginas = 680 },
+              new Libro() {Titulo = "Comer, rezar, amar", Autor = "Julia Roberts", Paginas = 600 },
+           };
+
+            foreach (var libro in listaNueva)
+            {
+                librosExistentes.Add(libro);
+            }
+
+            var JsonString = JsonSerializer.Serialize(librosExistentes);
+            File.WriteAllText(ruta, JsonString);
+
+        }
+    };
+
+  
 
 }

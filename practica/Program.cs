@@ -20,7 +20,8 @@ using static practica.Producto;
 //await Peliculas.Secuencial();
 //ProdExamen.Crear();
 //EjercicioLibro.GuardarLibros();
-EjercicioLibro.FiltrarLibros();
+//EjercicioLibro.FiltrarLibros();
+EjercicioLibro.AgregarLibros();
 
 
 
