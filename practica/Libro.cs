@@ -36,7 +36,7 @@ namespace practica
             var listalibro = Libro.ListarLibros();
 
             var JsonString = JsonSerializer.Serialize(listalibro);
-            File.WriteAllText(ruta, JsonString);
+            File.WriteAllText(ruta, JsonString, new UTF8Encoding(true));
         }
 
         public static void FiltrarLibros()
@@ -94,6 +94,26 @@ namespace practica
             var JsonString = JsonSerializer.Serialize(nuevoArchivo);
             File.WriteAllText(rutaLectura, JsonString);
 
+        }
+
+        public static void MasLibros()
+        {
+            var leerLibro = File.ReadAllText(ruta);
+            var agregar = JsonSerializer.Deserialize<List<Libro>>(leerLibro);
+
+            var librosNuevos = new List<Libro>
+            {
+                new Libro() {Titulo = "Libro 3", Autor = "Autor3", Paginas = 125},
+                new Libro() {Titulo = "Libro 4", Autor = "Autor4", Paginas = 220},
+            };
+
+            foreach (var libro in librosNuevos)
+            {
+                agregar.Add(libro);
+            }
+
+            var JsonString = JsonSerializer.Serialize(agregar);
+            File.WriteAllText(ruta, JsonString, new UTF8Encoding(true));
         }
     } 
 

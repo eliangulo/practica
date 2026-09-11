@@ -23,10 +23,14 @@ using static practica.Producto;
 //EjercicioLibro.FiltrarLibros();
 //EjercicioLibro.AgregarLibros();
 //EjercicioLibro.LeerArchivo();
+//EjercicioLibro.MasLibros();
 //Curso.LeerLineas();
 
-await TareasConcurrencias.ProcesoParalelo();
-await TareasConcurrencias.ProcesoSecuencial();
+//await TareasConcurrencias.ProcesoParalelo();
+//await TareasConcurrencias.ProcesoSecuencial();
+
+//Producto.AplicarDescuento();
+await Imagen.Descargar();
 
 
 
